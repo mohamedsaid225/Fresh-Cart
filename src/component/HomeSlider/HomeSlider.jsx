@@ -11,8 +11,8 @@ import { Autoplay } from 'swiper/modules';
 
 export default function HomeSlider() {
     return <>
-        <section className="grid grid-cols-12 mb-8">
-            <div className="col-span-8">
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-8">
+            <div className="col-span-12 md:col-span-8">
                 <Swiper slidesPerView={1} loop={true} autoplay={true} modules={[Autoplay]}>
                 <SwiperSlide>
                     <img className='w-full h-full object-cover' src={sliderImg3} alt="" />
@@ -25,9 +25,9 @@ export default function HomeSlider() {
                 </SwiperSlide>
             </Swiper>
         </div>
-        <div className="col-span-4">
-            <img className='w-full' src={sliderImg1} alt="" />
-            <img className='w-full' src={sliderImg2} alt="" />
+        <div className="col-span-12 md:col-span-4 flex flex-col md:gap-2">
+            <img className='w-full h-full object-cover' src={sliderImg1} alt="" />
+            <img className='w-full h-full object-cover' src={sliderImg2} alt="" />
         </div>
     </section >
     </>

@@ -9,24 +9,24 @@ export default function WishlistItem({ productInfo }) {
     let { addProductToCart } = useContext(CartContext)
     return <>
         <div className="border-2 border-gray-200 p-3">
-            <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-2">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                <div className="col-span-12 sm:col-span-2">
                     <img className="w-full" src={imageCover} alt="" />
                 </div>
-                <div className="col-span-10 space-y-4 flex flex-col">
+                <div className="col-span-12 sm:col-span-10 space-y-4 flex flex-col">
                     <h2 className="text-2xl font-semibold mb-2">{title}</h2>
                     <span className="text-lg font-semibold text-primary-700">{price} EGP</span>
-                    <div className="space-x-4">
+                    <div className="flex flex-col space-y-2">
                         <button
                             onClick={() => {
-                                addProductToCart({ productId: id })
+                                addProductToCart({ productId: id }) 
                             }}
                             className="btn bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-300 font-semibold">ADD TO CART</button>
                         <button
                             onClick={() => {
                                 removeFromWishList({ productId: id })
                             }}
-                            className="btn  bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 font-semibold   "><i className="fa-solid fa-trash mr-1"></i>REMOVE</button>
+                            className="btn bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 font-semibold"><i className="fa-solid fa-trash mr-1"></i>REMOVE</button>
                     </div>
 
                 </div>

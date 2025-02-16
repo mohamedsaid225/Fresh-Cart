@@ -26,7 +26,7 @@ export default function Brands() {
             <meta name="keywords" content='E-commerce, FreshCart' />
         </Helmet>
         <header className="text-center font-bold text-4xl text-primary-700 mb-6">All Brands</header>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {data.data.data.map((product) => <BrandsItem key={product._id} productInfo={product} />
             )}
         </div>

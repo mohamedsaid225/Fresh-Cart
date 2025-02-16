@@ -26,7 +26,7 @@ export default function Category() {
             <meta name="keywords" content='E-commerce, FreshCart' />
         </Helmet>
         <header className="text-center font-bold text-4xl text-primary-700 mb-6">All Categories</header>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
            {data.data.data.map((product)=><CategoryItem productInfo={product} key={product._id}/>)} 
         </div>
     </>

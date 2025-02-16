@@ -14,11 +14,9 @@ export default function Cart() {
     return <>
         <Helmet>
             <title>Cart Page</title>
+            <meta name="description" content="FreshCart| Cart Page , ...." />
+            <meta name="keywords" content='E-commerce, FreshCart' />
         </Helmet>
-
-
-
-
 
         {cartInfo == null ? <Loading /> :
             <section>

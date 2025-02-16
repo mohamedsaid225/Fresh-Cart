@@ -17,7 +17,7 @@ export default function CategorySlider() {
         return axios.request(options)
 
     }
-    let { data,  isLoading } = useQuery({
+    let { data, isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: getCategory,
         refetchOnMount: false,
@@ -28,7 +28,11 @@ export default function CategorySlider() {
     return <>
         <section className="my-8">
             <h2 className="mb-5 text-lg text-gray-600 font-semibold">Shop Popular Categories</h2>
-            <Swiper slidesPerView={6} loop={true} autoplay={true} modules={[Autoplay]}>
+            <Swiper breakpoints={{
+                320: { slidesPerView: 2 }, // موبايل - يعرض صورتين فقط
+                768: { slidesPerView: 4 }, // تابلت - يعرض 4 صور
+                1024: { slidesPerView: 6 }, // ديسك توب - يعرض 6 صور
+            }} loop={true} autoplay={true} modules={[Autoplay]}>
                 {data.data.data.map((category) => <SwiperSlide key={category._id}>
                     <div className="h-64">
                         <img className="w-full h-full object-cover" src={category.image} alt="" />

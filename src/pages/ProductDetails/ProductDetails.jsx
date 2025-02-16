@@ -68,8 +68,8 @@ export default function ProductDetails() {
                 <Helmet>
                     <title>{productDetails.title}</title>
                 </Helmet>
-                <section className="grid grid-cols-12 gap-5">
-                    <div className="col-span-3">
+                <section className="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                    <div className="sm:col-span-4 md:col-span-3">
                         <ReactImageGallery showFullscreenButton={false} showPlayButton={false} showNav={false} items={productDetails.images.map((image) => {
                             return {
                                 original: image,
@@ -77,7 +77,7 @@ export default function ProductDetails() {
                             }
                         })} />
                     </div>
-                    <div className="col-span-9 space-y-4">
+                    <div className="sm:col-span-8 md:col-span-9 space-y-4">
                         <div>
                             <h2 className='title text-2xl font-semibold text-gray-600'>
                                 {productDetails.title}
@@ -100,11 +100,22 @@ export default function ProductDetails() {
                 <section>
                     <h2 className='text-2xl font-semibold text-gray-600 my-8'>Related Products</h2>
                     {relatedProducts ?
-                        <Swiper slidesPerView={6} spaceBetween={20}>
-                            {relatedProducts.map((product) => <SwiperSlide key={product.id}>
-                                <Card productInfo={product} />
-                            </SwiperSlide>)}
-                        </Swiper> : <Loading />}
+                        <div className='w-full'>
+                            <Swiper
+                                slidesPerView={1}
+                                breakpoints={{
+                                    320: { slidesPerView: 2 },  // على الموبايل
+                                    640: { slidesPerView: 3 },  // على التابلت
+                                    1024: { slidesPerView: 4 }, // على اللابتوب
+                                    1280: { slidesPerView: 6 }  // على الشاشات الكبيرة
+                                }}
+                                spaceBetween={20}>
+                                {relatedProducts.map((product) => <SwiperSlide key={product.id}>
+                                    <Card productInfo={product} />
+                                </SwiperSlide>)}
+                            </Swiper>
+                        </div>
+                        : <Loading />}
                 </section>
             </>
         ) :
