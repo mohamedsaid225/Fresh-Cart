@@ -123,60 +123,68 @@ export default function Navbar() {
                         </button>
 
                         {token && <>
-                            {/* عناصر القائمة */}
-                            <ul className="flex flex-col gap-4 mt-10">
-                                <li><NavLink className={({ isActive }) => { return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}` }} to="/">
-                                    Home
-                                </NavLink></li>
-                                <li><NavLink className={({ isActive }) => {
-                                    return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
-                                }} to="/products">Products</NavLink></li>
-                                <li><NavLink className={({ isActive }) => {
-                                    return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
-                                }} to="/category">Categories</NavLink></li>
-                                <li><NavLink className={({ isActive }) => {
-                                    return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
-                                }} to="/brands">Brands</NavLink></li>
-                                <li><NavLink className={({ isActive }) => {
-                                    return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
-                                }} to="/allorders">Orders</NavLink></li>
-                                <li><NavLink className={({ isActive }) => {
-                                    return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
-                                }} to="/wishlist">Wishlist</NavLink></li>
-                            </ul>
-                            {/* روابط التواصل الاجتماعي */}
-                            <ul className="flex items-center justify-center gap-8 mt-5">
-                                <li>
-                                    <a href="https://instagram.com" target='_blank'>
-                                        <i className='fa-brands fa-instagram'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://facebook.com" target='_blank'>
-                                        <i className='fa-brands fa-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://tiktok.com" target='_blank'>
-                                        <i className='fa-brands fa-tiktok'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com" target='_blank'>
-                                        <i className='fa-brands fa-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://linkedin.com" target='_blank'>
-                                        <i className='fa-brands fa-linkedin'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://youtube.com" target='_blank'>
-                                        <i className='fa-brands fa-youtube'></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <div className='space-y-6'>
+                                {/* عناصر القائمة */}
+                                <ul className="flex flex-col gap-4 mt-10">
+                                    <li><NavLink className={({ isActive }) => { return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}` }} to="/">
+                                        Home
+                                    </NavLink></li>
+                                    <li><NavLink className={({ isActive }) => {
+                                        return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
+                                    }} to="/products">Products</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => {
+                                        return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
+                                    }} to="/category">Categories</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => {
+                                        return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
+                                    }} to="/brands">Brands</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => {
+                                        return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
+                                    }} to="/allorders">Orders</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => {
+                                        return `relative before:absolute before:w-0 before:h-0.5 hover:before:w-full before:transition-[width] before:duration-300 before:bg-primary-800 before:left-0 before:-bottom-1 ${isActive ? 'before:!w-full font-semibold ' : ""}`
+                                    }} to="/wishlist">Wishlist</NavLink></li>
+                                </ul>
+                                <Link to='/cart' className='cart relative'>
+                                    <i className='fa-solid fa-cart-shopping text-lg mt-8'></i>
+                                    <div className="cart-counter absolute right-0 top-0 h-5 w-5 bg-primary-800 text-white rounded-full flex justify-center items-center translate-x-1/2 -translate-y-1/2">
+                                        {cartInfo ? <span className='text-sm font-semibold'>{cartInfo.numOfCartItems}</span> : <i className='fa-solid fa-spinner fa-spin'></i>}
+                                    </div>
+                                </Link>
+                                {/* روابط التواصل الاجتماعي */}
+                                <ul className="flex items-center justify-center gap-8 mt-5">
+                                    <li>
+                                        <a href="https://instagram.com" target='_blank'>
+                                            <i className='fa-brands fa-instagram'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://facebook.com" target='_blank'>
+                                            <i className='fa-brands fa-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://tiktok.com" target='_blank'>
+                                            <i className='fa-brands fa-tiktok'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com" target='_blank'>
+                                            <i className='fa-brands fa-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://linkedin.com" target='_blank'>
+                                            <i className='fa-brands fa-linkedin'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com" target='_blank'>
+                                            <i className='fa-brands fa-youtube'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </>}
 
                         {/* أزرار تسجيل الدخول/الخروج */}
